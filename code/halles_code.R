@@ -42,6 +42,6 @@ SuperCleanData$Section <- paste0(SuperCleanData$Section, SuperCleanData$`Section
 SuperCleanData$`Section Location` <- NULL
 
 # Export the entire data frame to a CSV file
-write.csv(SuperCleanData, "SuperCleanBurbotData", row.names = FALSE)
+write.csv(SuperCleanData, "data/SuperCleanBurbotData", row.names = FALSE)
 
 
