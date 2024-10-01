@@ -21,6 +21,6 @@ clean_data <- raw_data %>%
 
 
 # Export the entire data frame to a CSV file
-write.csv(SuperCleanData, "data/SuperCleanBurbotData", row.names = FALSE)
+write.csv(clean_data, "data/clean_data.csv", row.names = FALSE)
 
 
