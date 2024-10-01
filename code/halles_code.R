@@ -45,4 +45,3 @@ SuperCleanData$`Section Location` <- NULL
 write.csv(SuperCleanData, "SuperCleanBurbotData", row.names = FALSE)
 
 
-
