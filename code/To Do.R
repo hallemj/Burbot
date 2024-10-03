@@ -9,3 +9,7 @@
 #      - remove all the rows with zero count
 #      - remake histogram
 #      - look into making choropleth map (polygons based on a value - count) from set breaks ()
+# look for different lota lota data including iNaturalist
+
+
+# useful reading includes https://gisgeography.com/choropleth-maps-data-classification/
