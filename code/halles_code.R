@@ -1,6 +1,6 @@
 ## read in and clean burbot assessment larva data
 
-# load dependendancies
+# load dependencies
 library(tidyverse)
 
 
