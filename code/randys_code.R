@@ -1,3 +1,6 @@
+
+
+
 ## read in and clean burbot assessment larva data
 
 # load dependencies ----
@@ -26,13 +29,8 @@ clean_data <- raw_data %>%
 # Export the entire data frame to a CSV file
 write.csv(clean_data, "data/clean_data.csv", row.names = FALSE)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-
->>>>>>> ccc4ba345b5c6046b3c4d187a8f88c0398288b65
-
+# clean and wrangle data for joining to MI PLSS data.  Added in year ----
 
 clean_data_year <- raw_data %>%
   group_by(REPRESENTATIVE_TRS, Year) %>%
@@ -46,16 +44,23 @@ clean_data_year <- raw_data %>%
   mutate(TWNRNSEC = paste0(Township, Range, Section))
 
 
-<<<<<<< HEAD
 
 # Export the entire data frame to a CSV file
 write.csv(clean_data_year, "data/clean_data.csv", row.names = FALSE)
 
 
-=======
-# Export the entire data frame to a CSV file
-write.csv(clean_data_year, "data/clean_data.csv", row.names = FALSE)
+# wrangle data for time series ----
 
-=======
->>>>>>> d4d140ccf3b905274c9e94c9233d65f0777234a4
->>>>>>> ccc4ba345b5c6046b3c4d187a8f88c0398288b65
+burbot_year <- raw_data %>%
+  group_by(Year) %>%
+  summarize(year_count = sum(FREQUENCY))
+
+
+# ugly chart of count per year ----
+
+ugly_chart <-
+  ggplot(data = burbot_year, aes(x = Year, y = year_count)) +
+  geom_line() +
+  geom_point()
+
+ugly_chart
