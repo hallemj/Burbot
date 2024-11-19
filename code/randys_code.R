@@ -26,6 +26,12 @@ clean_data <- raw_data %>%
 # Export the entire data frame to a CSV file
 write.csv(clean_data, "data/clean_data.csv", row.names = FALSE)
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+>>>>>>> ccc4ba345b5c6046b3c4d187a8f88c0398288b65
 
 
 clean_data_year <- raw_data %>%
@@ -40,8 +46,16 @@ clean_data_year <- raw_data %>%
   mutate(TWNRNSEC = paste0(Township, Range, Section))
 
 
+<<<<<<< HEAD
 
 # Export the entire data frame to a CSV file
 write.csv(clean_data_year, "data/clean_data.csv", row.names = FALSE)
 
 
+=======
+# Export the entire data frame to a CSV file
+write.csv(clean_data_year, "data/clean_data.csv", row.names = FALSE)
+
+=======
+>>>>>>> d4d140ccf3b905274c9e94c9233d65f0777234a4
+>>>>>>> ccc4ba345b5c6046b3c4d187a8f88c0398288b65
