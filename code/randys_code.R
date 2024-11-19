@@ -10,7 +10,8 @@ raw_data <- read.csv('data/Burbot_Larval Assessment.csv')
 
 # clean and wrangle data for joining to MI PLSS data.  Just count and TRS ----
 clean_data <- raw_data %>%
-  group_by(REPRESENTATIVE_TRS) %>%
+  group_by(REPRESENTATIVE_TRS, Year) %>%
+  
   summarize(count = sum(FREQUENCY)) %>%
   separate(REPRESENTATIVE_TRS, 
            into = c("Township", "Range", "Section", "Section Location"), 
@@ -26,7 +27,7 @@ clean_data <- raw_data %>%
 write.csv(clean_data, "data/clean_data.csv", row.names = FALSE)
 
 
-# clean and wrangle data for joining to MI PLSS data.  Added year to count and TRS. ----
+
 clean_data_year <- raw_data %>%
   group_by(REPRESENTATIVE_TRS, Year) %>%
   summarize(count = sum(FREQUENCY)) %>%
@@ -37,4 +38,10 @@ clean_data_year <- raw_data %>%
   mutate(Section = str_pad(Section, width = 2, pad = "0")) %>%
   na.omit() %>%
   mutate(TWNRNSEC = paste0(Township, Range, Section))
+
+
+
+# Export the entire data frame to a CSV file
+write.csv(clean_data_year, "data/clean_data.csv", row.names = FALSE)
+
 
